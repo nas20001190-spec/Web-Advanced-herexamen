@@ -126,3 +126,26 @@ h1 {
   text-transform: uppercase;
   padding: 12px 16px 0;
 }
+
+#search-input {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--val-panel);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid var(--val-red);
+  color: var(--val-white);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px;
+  padding: 12px 16px;
+  margin-bottom: 28px;
+  outline: none;
+}
+
+#search-input::placeholder {
+  color: var(--val-gray);
+}
+
+#search-input:focus {
+  border-left-width: 6px;
+}
