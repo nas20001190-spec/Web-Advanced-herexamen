@@ -38,19 +38,33 @@ h1 {
   margin-bottom: 32px;
 }
 
-#search-input {
-  display: block;
-  width: 100%;
-  max-width: 400px;
-  background-color: var(--val-panel);
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+#search-input,
+#role-filter {
+  box-sizing: border-box;
+  height: 48px;
+  line-height: 46px;
+  padding: 0 16px;
+  font-family: 'Rajdhani', sans-serif;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-left: 3px solid var(--val-red);
+  background-color: var(--val-panel);
   color: var(--val-white);
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 16px;
-  padding: 12px 16px;
-  margin-bottom: 28px;
   outline: none;
+}
+
+#search-input {
+  flex: 1;
+  min-width: 200px;
+  max-width: 400px;
+  font-size: 16px;
 }
 
 #search-input::placeholder {
@@ -58,6 +72,19 @@ h1 {
 }
 
 #search-input:focus {
+  border-left-color: var(--val-mint);
+  border-left-width: 6px;
+}
+
+#role-filter {
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  appearance: none;
+}
+
+#role-filter:focus {
+  outline: none;
   border-left-color: var(--val-mint);
   border-left-width: 6px;
 }
@@ -125,27 +152,4 @@ h1 {
   letter-spacing: 2px;
   text-transform: uppercase;
   padding: 12px 16px 0;
-}
-
-#search-input {
-  display: block;
-  width: 100%;
-  max-width: 400px;
-  background-color: var(--val-panel);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 3px solid var(--val-red);
-  color: var(--val-white);
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 16px;
-  padding: 12px 16px;
-  margin-bottom: 28px;
-  outline: none;
-}
-
-#search-input::placeholder {
-  color: var(--val-gray);
-}
-
-#search-input:focus {
-  border-left-width: 6px;
 }

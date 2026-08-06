@@ -5,3 +5,9 @@ export function searchAgents(agents, query) {
     agent.displayName.toLowerCase().includes(normalizedQuery)
   );
 }
+
+export function filterByRole(agents, role) {
+  return role === "all"
+    ? agents
+    : agents.filter((agent) => agent.role && agent.role.displayName === role);
+}

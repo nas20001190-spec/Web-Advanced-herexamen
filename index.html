@@ -14,7 +14,16 @@
 
 <body>
   <h1>Agents</h1>
-  <input type="text" id="search-input" placeholder="Zoek een agent...">
+  <div class="controls">
+    <input type="text" id="search-input" placeholder="Zoek een agent...">
+    <select id="role-filter">
+      <option value="all">Alle rollen</option>
+      <option value="Duelist">Duelist</option>
+      <option value="Sentinel">Sentinel</option>
+      <option value="Controller">Controller</option>
+      <option value="Initiator">Initiator</option>
+    </select>
+  </div>
   <div id="app"></div>
 
   <script type="module" src="/src/main.js"></script>
