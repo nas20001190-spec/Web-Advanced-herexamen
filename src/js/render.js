@@ -7,9 +7,8 @@ export function renderAgents(agents) {
     card.classList.add("agent-card");
 
     card.innerHTML = `
-      <img src="${agent.displayIcon}" alt="${agent.displayName}">
-      <h3>${agent.displayName}</h3>
-      <p>${agent.role ? agent.role.displayName : "Onbekend"}</p>
+      <span class="agent-role">${agent.role ? agent.role.displayName : "?"}</span>
+      <img src="${agent.displayIcon}" alt="${agent.displayName}">      <h3>${agent.displayName}</h3>
     `;
 
     app.appendChild(card);
