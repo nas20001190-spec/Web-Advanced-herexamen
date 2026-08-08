@@ -11,3 +11,15 @@ export function filterByRole(agents, role) {
     ? agents
     : agents.filter((agent) => agent.role && agent.role.displayName === role);
 }
+
+export function sortAgents(agents, order) {
+  const sorted = [...agents];
+
+  sorted.sort((a, b) =>
+    order === "az"
+      ? a.displayName.localeCompare(b.displayName)
+      : b.displayName.localeCompare(a.displayName)
+  );
+
+  return sorted;
+}

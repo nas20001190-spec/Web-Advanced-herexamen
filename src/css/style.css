@@ -47,7 +47,8 @@ h1 {
 }
 
 #search-input,
-#role-filter {
+#role-filter,
+#sort-select {
   box-sizing: border-box;
   height: 48px;
   line-height: 46px;
@@ -76,14 +77,16 @@ h1 {
   border-left-width: 6px;
 }
 
-#role-filter {
+#role-filter,
+#sort-select {
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
   appearance: none;
 }
 
-#role-filter:focus {
+#role-filter:focus,
+#sort-select:focus {
   outline: none;
   border-left-color: var(--val-mint);
   border-left-width: 6px;
