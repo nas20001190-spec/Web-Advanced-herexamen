@@ -18,3 +18,22 @@ export function toggleFavorite(agentUuid) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
   return updated;
 }
+
+const NOTES_KEY = "agentNotes";
+
+export function getNote(agentUuid) {
+  const notes = JSON.parse(localStorage.getItem(NOTES_KEY)) || {};
+  return notes[agentUuid] || "";
+}
+
+export function saveNote(agentUuid, text) {
+  const notes = JSON.parse(localStorage.getItem(NOTES_KEY)) || {};
+  notes[agentUuid] = text;
+  localStorage.setItem(NOTES_KEY, JSON.stringify(notes));
+}
+
+export function deleteNote(agentUuid) {
+  const notes = JSON.parse(localStorage.getItem(NOTES_KEY)) || {};
+  delete notes[agentUuid];
+  localStorage.setItem(NOTES_KEY, JSON.stringify(notes));
+}

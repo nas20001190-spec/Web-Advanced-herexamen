@@ -92,6 +92,24 @@ h1 {
   border-left-width: 6px;
 }
 
+#favorites-toggle {
+  height: 48px;
+  padding: 0 18px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--val-white);
+  background-color: var(--val-panel);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid var(--val-gray);
+  cursor: pointer;
+}
+
+#favorites-toggle.active {
+  border-left-color: var(--val-red);
+  color: var(--val-red);
+}
+
 #app {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -251,7 +269,7 @@ h1 {
 }
 
 .modal-info {
-  padding: 24px;
+  padding: 24px 24px 32px;
 }
 
 .modal-role {
@@ -320,6 +338,10 @@ h1 {
   border-color: var(--val-red);
 }
 
+#ability-detail {
+  margin-bottom: 24px;
+}
+
 #ability-detail h4 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.1rem;
@@ -338,20 +360,71 @@ h1 {
   line-height: 1.5;
 }
 
-#favorites-toggle {
-  height: 48px;
-  padding: 0 18px;
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 600;
-  font-size: 15px;
+/* Note form */
+#note-form textarea {
+  width: 100%;
+  min-height: 70px;
+  background-color: var(--val-black);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--val-white);
-  background-color: var(--val-panel);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 3px solid var(--val-gray);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px;
+  padding: 10px;
+  resize: vertical;
+  outline: none;
+}
+
+#note-form textarea:focus {
+  border-color: var(--val-mint);
+}
+
+.note-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+#note-form button[type="submit"] {
+  background-color: var(--val-red);
+  color: var(--val-black);
+  border: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 8px 16px;
   cursor: pointer;
 }
 
-#favorites-toggle.active {
-  border-left-color: var(--val-red);
+#note-delete {
+  background-color: transparent;
+  color: var(--val-gray);
+  border: 1px solid var(--val-gray);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+#note-delete:hover {
   color: var(--val-red);
+  border-color: var(--val-red);
+}
+
+.form-error {
+  color: var(--val-red);
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.note-saved {
+  color: var(--val-mint);
+  font-size: 12px;
+}
+
+.hidden {
+  display: none;
 }
