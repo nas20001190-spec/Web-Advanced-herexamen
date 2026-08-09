@@ -157,6 +157,27 @@ h1 {
   padding: 12px 16px 0;
 }
 
+/* Favorite button */
+.favorite-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(15, 25, 35, 0.6);
+  border: none;
+  border-radius: 50%;
+  color: var(--val-gray);
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 3;
+  transition: color 0.15s;
+}
+
+.favorite-btn.active {
+  color: var(--val-red);
+}
+
 /* Modal (detail overlay) */
 .modal-overlay {
   position: fixed;
@@ -315,4 +336,22 @@ h1 {
   font-size: 13px;
   color: var(--val-gray);
   line-height: 1.5;
+}
+
+#favorites-toggle {
+  height: 48px;
+  padding: 0 18px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--val-white);
+  background-color: var(--val-panel);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid var(--val-gray);
+  cursor: pointer;
+}
+
+#favorites-toggle.active {
+  border-left-color: var(--val-red);
+  color: var(--val-red);
 }

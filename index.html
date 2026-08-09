@@ -15,19 +15,20 @@
 <body>
   <h1>Agents</h1>
   <div class="controls">
-    <input type="text" id="search-input" placeholder="Zoek een agent...">
-    <select id="role-filter">
-      <option value="all">Alle rollen</option>
-      <option value="Duelist">Duelist</option>
-      <option value="Sentinel">Sentinel</option>
-      <option value="Controller">Controller</option>
-      <option value="Initiator">Initiator</option>
-    </select>
-    <select id="sort-select">
-      <option value="az">Naam A-Z</option>
-      <option value="za">Naam Z-A</option>
-    </select>
-  </div>
+  <input type="text" id="search-input" placeholder="Zoek een agent...">
+  <select id="role-filter">
+    <option value="all">Alle rollen</option>
+    <option value="Duelist">Duelist</option>
+    <option value="Sentinel">Sentinel</option>
+    <option value="Controller">Controller</option>
+    <option value="Initiator">Initiator</option>
+  </select>
+  <select id="sort-select">
+    <option value="az">Naam A-Z</option>
+    <option value="za">Naam Z-A</option>
+  </select>
+  <button id="favorites-toggle" type="button">Favorieten</button>
+</div>
   <div id="app"></div>
 
   <div id="modal-overlay" class="modal-overlay hidden">
