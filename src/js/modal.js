@@ -23,7 +23,7 @@ export function openModal(agent) {
   body.innerHTML = `
     <img class="modal-portrait" src="${agent.fullPortrait}" alt="${agent.displayName}">
     <div class="modal-info">
-      <span class="modal-role">${agent.role ? agent.role.displayName : "Onbekend"}</span>
+      <span class="modal-role">${agent.role ? agent.role.displayName : "Unknown"}</span>
       <h2>${agent.displayName}</h2>
       <p class="modal-description">${agent.description}</p>
 
@@ -31,14 +31,14 @@ export function openModal(agent) {
       <div class="ability-icons">${iconsHtml}</div>
       <div id="ability-detail"></div>
 
-      <h3>Mijn notitie</h3>
+      <h3>My note</h3>
       <form id="note-form">
-        <textarea id="note-input" placeholder="Schrijf hier je persoonlijke notitie over deze agent...">${getNote(agent.uuid)}</textarea>
-        <p id="note-error" class="form-error hidden">Notitie moet minstens 5 tekens bevatten.</p>
+        <textarea id="note-input" placeholder="Write your personal note about this agent here...">${getNote(agent.uuid)}</textarea>
+        <p id="note-error" class="form-error hidden">Note must be at least 5 characters long.</p>
         <div class="note-actions">
-          <button type="submit">Opslaan</button>
-          <button type="button" id="note-delete" class="${getNote(agent.uuid) ? "" : "hidden"}">Verwijderen</button>
-          <span id="note-saved" class="note-saved hidden">Opgeslagen ✓</span>
+          <button type="submit">Save</button>
+          <button type="button" id="note-delete" class="${getNote(agent.uuid) ? "" : "hidden"}">Delete</button>
+          <span id="note-saved" class="note-saved hidden">Saved ✓</span>
         </div>
       </form>
     </div>
