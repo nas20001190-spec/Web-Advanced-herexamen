@@ -7,7 +7,7 @@ export function renderAgents(agents) {
 
   agents.forEach((agent) => {
     const card = document.createElement("div");
-    card.classList.add("agent-card");
+    card.classList.add("agent-card", "reveal");
 
     card.innerHTML = `
       <button class="favorite-btn ${isFavorite(agent.uuid) ? "active" : ""}">♥</button>
@@ -25,5 +25,25 @@ export function renderAgents(agents) {
 
     card.addEventListener("click", () => openModal(agent));
     app.appendChild(card);
+  });
+
+  observeCards();
+}
+
+function observeCards() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  document.querySelectorAll(".agent-card.reveal").forEach((card) => {
+    observer.observe(card);
   });
 }
