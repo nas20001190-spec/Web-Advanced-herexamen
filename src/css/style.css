@@ -8,6 +8,17 @@
   --val-white-pure: #ffffff;
   --val-gray: #8b978f;
   --val-mint: #66e5da;
+  --overlay-color: rgba(15, 25, 35, 0.8);
+  --border-soft: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="light"] {
+  --val-black: #f2f1ec;
+  --val-panel: #ffffff;
+  --val-white: #14181c;
+  --val-gray: #5a6560;
+  --overlay-color: rgba(242, 241, 236, 0.88);
+  --border-soft: rgba(20, 24, 28, 0.15);
 }
 
 * {
@@ -20,7 +31,7 @@ body {
   font-family: 'Rajdhani', sans-serif;
   background-color: var(--val-black);
   background-image:
-    linear-gradient(rgba(15, 25, 35, 0.8), rgba(15, 25, 35, 0.8)),
+    linear-gradient(var(--overlay-color), var(--overlay-color)),
     url('/src/assets/Valorant-wlp-darkmode.jpg');
   background-size: cover;
   background-position: center;
@@ -28,6 +39,13 @@ body {
   color: var(--val-white);
   padding: 32px 24px;
   min-height: 100vh;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+html[data-theme="light"] body {
+  background-image:
+    linear-gradient(var(--overlay-color), var(--overlay-color)),
+    url('/src/assets/Valorant-wlp-lightmode.png');
 }
 
 h1 {
@@ -56,7 +74,7 @@ h1 {
   line-height: 46px;
   padding: 0 16px;
   font-family: 'Rajdhani', sans-serif;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-soft);
   border-left: 3px solid var(--val-red);
   background-color: var(--val-panel);
   color: var(--val-white);
@@ -102,7 +120,7 @@ h1 {
   font-size: 15px;
   color: var(--val-white);
   background-color: var(--val-panel);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-soft);
   border-left: 3px solid var(--val-gray);
   cursor: pointer;
 }
@@ -110,6 +128,16 @@ h1 {
 #favorites-toggle.active {
   border-left-color: var(--val-red);
   color: var(--val-red);
+}
+
+#theme-toggle {
+  height: 48px;
+  width: 48px;
+  font-size: 18px;
+  background-color: var(--val-panel);
+  border: 1px solid var(--border-soft);
+  color: var(--val-white);
+  cursor: pointer;
 }
 
 #app {
@@ -124,7 +152,7 @@ h1 {
   clip-path: polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%);
   padding: 0 0 16px 0;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-soft);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
 }
@@ -149,7 +177,7 @@ h1 {
   top: 10px;
   right: -6px;
   background-color: var(--val-red);
-  color: var(--val-black);
+  color: #0f1923;
   font-family: 'Rajdhani', sans-serif;
   font-weight: 700;
   font-size: 11px;
@@ -166,7 +194,7 @@ h1 {
   object-fit: cover;
   object-position: top;
   display: block;
-  background-color: var(--val-black);
+  background-color: #0f1923;
 }
 
 .agent-card h3 {
@@ -190,7 +218,7 @@ h1 {
   background-color: rgba(0, 0, 0, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  color: var(--val-white);
+  color: #ffffff;
   font-size: 16px;
   cursor: pointer;
   z-index: 3;
@@ -252,7 +280,7 @@ h1 {
   background-color: rgba(15, 25, 35, 0.6);
   border: none;
   border-radius: 50%;
-  color: var(--val-white);
+  color: #ffffff;
   font-size: 22px;
   line-height: 1;
   cursor: pointer;
@@ -262,7 +290,7 @@ h1 {
 
 #modal-close:hover {
   background-color: var(--val-red);
-  color: var(--val-black);
+  color: #0f1923;
 }
 
 .modal-portrait {
@@ -280,7 +308,7 @@ h1 {
 .modal-role {
   display: inline-block;
   background-color: var(--val-red);
-  color: var(--val-black);
+  color: #0f1923;
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 1px;
@@ -323,8 +351,8 @@ h1 {
   width: 44px;
   height: 44px;
   padding: 8px;
-  background-color: var(--val-black);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: #0f1923;
+  border: 1px solid var(--border-soft);
   cursor: pointer;
   transition: border-color 0.15s;
 }
@@ -370,7 +398,7 @@ h1 {
   width: 100%;
   min-height: 70px;
   background-color: var(--val-black);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--border-soft);
   color: var(--val-white);
   font-family: 'Rajdhani', sans-serif;
   font-size: 13px;
@@ -392,7 +420,7 @@ h1 {
 
 #note-form button[type="submit"] {
   background-color: var(--val-red);
-  color: var(--val-black);
+  color: #0f1923;
   border: none;
   font-family: 'Rajdhani', sans-serif;
   font-weight: 700;

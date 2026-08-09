@@ -47,3 +47,13 @@ export function getRolePreference() {
 export function saveRolePreference(role) {
   localStorage.setItem(ROLE_PREF_KEY, role);
 }
+
+const THEME_KEY = "theme";
+
+export function getTheme() {
+  return localStorage.getItem(THEME_KEY) || "dark";
+}
+
+export function saveTheme(theme) {
+  localStorage.setItem(THEME_KEY, theme);
+}
