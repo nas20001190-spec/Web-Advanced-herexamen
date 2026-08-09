@@ -10,6 +10,7 @@
   --val-mint: #66e5da;
   --overlay-color: rgba(15, 25, 35, 0.8);
   --border-soft: rgba(255, 255, 255, 0.12);
+  --icon-bg: #0f1923;
 }
 
 [data-theme="light"] {
@@ -19,6 +20,7 @@
   --val-gray: #5a6560;
   --overlay-color: rgba(242, 241, 236, 0.88);
   --border-soft: rgba(20, 24, 28, 0.15);
+  --icon-bg: #e4e2da;
 }
 
 * {
@@ -351,8 +353,8 @@ h1 {
   width: 44px;
   height: 44px;
   padding: 8px;
-  background-color: #0f1923;
-  border: 1px solid var(--border-soft);
+  background-color: var(--icon-bg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
   transition: border-color 0.15s;
 }
@@ -361,6 +363,11 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(1);
+}
+
+[data-theme="light"] .ability-icon img {
+  filter: brightness(0) saturate(100%);
 }
 
 .ability-icon.active {
