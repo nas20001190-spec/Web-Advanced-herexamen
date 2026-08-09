@@ -1,3 +1,5 @@
+import { openModal } from "./modal.js";
+
 export function renderAgents(agents) {
   const app = document.getElementById("app");
   app.innerHTML = "";
@@ -8,8 +10,11 @@ export function renderAgents(agents) {
 
     card.innerHTML = `
       <span class="agent-role">${agent.role ? agent.role.displayName : "?"}</span>
-      <img src="${agent.displayIcon}" alt="${agent.displayName}">      <h3>${agent.displayName}</h3>
+      <img src="${agent.displayIcon}" alt="${agent.displayName}">
+      <h3>${agent.displayName}</h3>
     `;
+
+    card.addEventListener("click", () => openModal(agent));
 
     app.appendChild(card);
   });
