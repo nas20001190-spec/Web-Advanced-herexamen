@@ -37,3 +37,13 @@ export function deleteNote(agentUuid) {
   delete notes[agentUuid];
   localStorage.setItem(NOTES_KEY, JSON.stringify(notes));
 }
+
+const ROLE_PREF_KEY = "lastRoleFilter";
+
+export function getRolePreference() {
+  return localStorage.getItem(ROLE_PREF_KEY) || "all";
+}
+
+export function saveRolePreference(role) {
+  localStorage.setItem(ROLE_PREF_KEY, role);
+}

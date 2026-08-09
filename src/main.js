@@ -2,7 +2,7 @@ import { fetchAgents } from "./js/api.js";
 import { renderAgents } from "./js/render.js";
 import { searchAgents, filterByRole, sortAgents } from "./js/filters.js";
 import { closeModal } from "./js/modal.js";
-import { getFavorites } from "./js/storage.js";
+import { getFavorites, getRolePreference, saveRolePreference } from "./js/storage.js";
 
 let allAgents = [];
 let showOnlyFavorites = false;
@@ -14,9 +14,11 @@ const favoritesToggle = document.getElementById("favorites-toggle");
 const modalOverlay = document.getElementById("modal-overlay");
 const modalClose = document.getElementById("modal-close");
 
+roleFilter.value = getRolePreference();
+
 fetchAgents().then((agents) => {
   allAgents = agents;
-  renderAgents(allAgents);
+  applyFiltersAndSearch();
 });
 
 function applyFiltersAndSearch() {
@@ -33,7 +35,12 @@ function applyFiltersAndSearch() {
 }
 
 searchInput.addEventListener("input", applyFiltersAndSearch);
-roleFilter.addEventListener("change", applyFiltersAndSearch);
+
+roleFilter.addEventListener("change", () => {
+  saveRolePreference(roleFilter.value);
+  applyFiltersAndSearch();
+});
+
 sortSelect.addEventListener("change", applyFiltersAndSearch);
 
 favoritesToggle.addEventListener("click", () => {
