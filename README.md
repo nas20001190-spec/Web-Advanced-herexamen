@@ -134,4 +134,4 @@ No API key or environment variables are required — the Valorant API is public 
 
 ## AI usage log
 
-
+https://chatgpt.com/c/6a7499ec-c784-83eb-8ddb-08a386efff35
